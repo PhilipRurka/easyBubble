@@ -1,0 +1,135 @@
+section {
+  margin: 4rem;
+}
+
+.easy-bubble-wrapper span {
+  color: white;
+}
+
+body {
+  background-color: white;
+  margin-top: 100px;
+}
+
+.grid-section {
+  position: relative;
+  display: table;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  border: 1px solid black;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  position: absolute;
+  cursor: pointer;
+}
+
+li button {
+  border-radius: 10px;
+  height: 50px;
+  width: 50px;
+  color: white;
+  background-color: #1b283b;
+  font-size: 16px;
+}
+
+.row-1,
+.row-2,
+.row-3 {
+  display: block;
+}
+
+
+/** FIRST ROW */
+.row-1 li:first-child {
+  bottom: 100%;
+  right: calc(100% - 80px);
+}
+
+.row-1 li:nth-child(2) {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.row-1 li:last-child {
+  bottom: 100%;
+  left: calc(100% - 80px);
+}
+
+
+/** SECOND ROW */
+.row-2 li:first-child {
+  bottom: calc(100% - 80px);
+  right: 100%;
+}
+
+.row-2 li:last-child {
+  bottom: calc(100% - 80px);
+  left: 100%;
+}
+
+
+/** THIRD ROW */
+.row-3 li:first-child {
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+}
+
+.row-3 li:last-child {
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+}
+
+
+/** FOURTH ROW */
+.row-4 li:first-child {
+  top: calc(100% - 80px);
+  right: 100%;
+}
+
+.row-4 li:last-child {
+  top: calc(100% - 80px);
+  left: 100%;
+}
+
+
+/** FIFTH ROW */
+.row-5 li:first-child {
+  top: 100%;
+  right: calc(100% - 80px);
+}
+
+.row-5 li:nth-child(2) {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.row-5 li:last-child {
+  top: 100%;
+  left: calc(100% - 80px);
+}
+
+
+/** Position Font Color */
+#bubble-2 span {
+  color: #2D1E2F;
+}
+
+#bubble-3 span {
+  color: #565676;
+}
+
+#bubble-4 span {
+  color: #3d3286;
+}
