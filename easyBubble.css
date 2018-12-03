@@ -1,0 +1,312 @@
+.easy-bubble,
+.easy-bubble * {
+  box-sizing: border-box;
+}
+
+.easy-bubble-event > div * {
+  pointer-events: none;
+}
+
+.easy-bubble {
+  position: relative;
+  display: table;
+}
+
+.easy-bubble-hover .easy-bubble-wrapper {
+  transition: opacity 0.5s ease 0.25s;
+}
+
+.easy-bubble-click .easy-bubble-wrapper {
+  transition: opacity 0.5s ease;
+}
+
+.easy-bubble-wrapper:hover {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.easy-bubble-wrapper {
+  position: absolute;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.show-bubble {
+  opacity: 1;
+}
+
+.pointer-bubble {
+  pointer-events: initial;
+}
+
+.easy-bubble-wrapper::before,
+.easy-bubble-wrapper::after {
+  content: '';
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  z-index: 1;
+  border-style: solid;
+}
+
+.easy-bubble-wrapper::before {
+  z-index: -1;
+  background-color: transparent;
+}
+
+.easy-bubble-wrapper::after {
+  z-index: 1;
+}
+
+.easy-bubble-wrapper .easy-bubble-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 3px;
+  z-index: 2;
+  padding: 12px;
+  text-align: left;
+}
+
+/** Position 1, Position 2, Position 3 */
+.easy-bubble-pos-1,
+.easy-bubble-pos-2,
+.easy-bubble-pos-3 {
+  top: calc(100% + 16px);
+}
+
+.easy-bubble-pos-1::before,
+.easy-bubble-pos-2::before,
+.easy-bubble-pos-3::before,
+.easy-bubble-pos-1::after,
+.easy-bubble-pos-2::after,
+.easy-bubble-pos-3::after {
+  bottom: calc(100% - 9px);
+  border-top-width: 2px;
+  border-left-width: 2px;
+}
+
+/** Position 1 */
+.easy-bubble-pos-1 {
+  left: 0;
+}
+
+.easy-bubble-pos-1::before,
+.easy-bubble-pos-1::after {
+  left: 16px;
+  transform: rotate(45deg);
+}
+
+/** Position 2 */
+.easy-bubble-pos-2 {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.easy-bubble-pos-2::before,
+.easy-bubble-pos-2::after {
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/** Position 3 */
+.easy-bubble-pos-3 {
+  right: 0;
+}
+
+.easy-bubble-pos-3::before,
+.easy-bubble-pos-3::after {
+  right: 16px;
+  transform: rotate(45deg);
+}
+
+/** Position 4, Position 5, Position 6 */
+.easy-bubble-pos-4,
+.easy-bubble-pos-5,
+.easy-bubble-pos-6 {
+  right: calc(100% + 16px);
+}
+
+.easy-bubble-pos-4::before,
+.easy-bubble-pos-5::before,
+.easy-bubble-pos-6::before,
+.easy-bubble-pos-4::after,
+.easy-bubble-pos-5::after,
+.easy-bubble-pos-6::after {
+  left: calc(100% - 9px);
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+
+/** Position 4 */
+.easy-bubble-pos-4 {
+  top: 0;
+}
+
+.easy-bubble-pos-4::before,
+.easy-bubble-pos-4::after {
+  top: 16px;
+  transform: rotate(45deg);
+}
+
+/** Position 5 */
+.easy-bubble-pos-5 {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.easy-bubble-pos-5::before,
+.easy-bubble-pos-5::after {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/** Position 6 */
+.easy-bubble-pos-6 {
+  bottom: 0;
+}
+
+.easy-bubble-pos-6::before,
+.easy-bubble-pos-6::after {
+  bottom: 16px;
+  transform: rotate(45deg);
+}
+
+/** Position 7, Position 8, Position 9 */
+.easy-bubble-pos-7,
+.easy-bubble-pos-8,
+.easy-bubble-pos-9 {
+  bottom: calc(100% + 16px);
+}
+
+.easy-bubble-pos-7::before,
+.easy-bubble-pos-8::before,
+.easy-bubble-pos-9::before,
+.easy-bubble-pos-7::after,
+.easy-bubble-pos-8::after,
+.easy-bubble-pos-9::after {
+  top: calc(100% - 9px);
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+}
+
+/** Position 7 */
+.easy-bubble-pos-7 {
+  right: 0;
+}
+
+.easy-bubble-pos-7::before,
+.easy-bubble-pos-7::after {
+  right: 16px;
+  transform: rotate(45deg);
+}
+
+/** Position 8 */
+.easy-bubble-pos-8 {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.easy-bubble-pos-8::before,
+.easy-bubble-pos-8::after {
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/** Position 9 */
+.easy-bubble-pos-9 {
+  left: 0;
+}
+
+.easy-bubble-pos-9::before,
+.easy-bubble-pos-9::after {
+  left: 16px;
+  transform: rotate(45deg);
+}
+
+/** Position 10, Position 11, Position 12 */
+.easy-bubble-pos-10,
+.easy-bubble-pos-11,
+.easy-bubble-pos-12 {
+  left: calc(100% + 16px);
+}
+
+.easy-bubble-pos-10::before,
+.easy-bubble-pos-11::before,
+.easy-bubble-pos-12::before,
+.easy-bubble-pos-10::after,
+.easy-bubble-pos-11::after,
+.easy-bubble-pos-12::after {
+  right: calc(100% - 9px);
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+
+/** Position 10 */
+.easy-bubble-pos-10 {
+  bottom: 0;
+}
+
+.easy-bubble-pos-10::before,
+.easy-bubble-pos-10::after {
+  bottom: 16px;
+  transform: rotate(45deg);
+}
+
+/** Position 11 */
+.easy-bubble-pos-11 {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.easy-bubble-pos-11::before,
+.easy-bubble-pos-11::after {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/** Position 12 */
+.easy-bubble-pos-12 {
+  top: 0;
+}
+
+.easy-bubble-pos-12::before,
+.easy-bubble-pos-12::after {
+  top: 16px;
+  transform: rotate(45deg);
+}
+
+
+/** Static Width */
+.easy-bubble-width-sm {
+  width: 128px;
+}
+
+.easy-bubble-width-md {
+  width: 192px;
+}
+
+.easy-bubble-width-lg {
+  width: 256px;
+}
+
+/** Static Max Height */
+.easy-bubble-max-height-sm > .easy-bubble-container {
+  max-height: 128px;
+  overflow-y: scroll;
+}
+
+.easy-bubble-max-height-md > .easy-bubble-container {
+  max-height: 192px;
+  overflow-y: scroll;
+}
+
+.easy-bubble-max-height-lg > .easy-bubble-container {
+  max-height: 256px;
+  overflow-y: scroll;
+}
