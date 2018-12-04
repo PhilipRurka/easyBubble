@@ -2,7 +2,7 @@ window.easyBubbleLib = {
   timeout: false,
   number: 0,
   init: function() {
-    if(easy_bubble_colors) {
+    if(!!window.easy_bubble_colors) {
       var easyList = document.getElementsByClassName('easy-bubble');
       for (var i = 0; i < easyList.length; i++) {
         var easyBubble = easyList[i];
@@ -102,7 +102,7 @@ window.easyBubbleLib = {
         }
       }
     } else {
-      console.err('The global variable called "window.easy_bubble_colors" is undefined. Please review the Docs ________________ for more information.')
+      console.error('The global variable called "window.easy_bubble_colors" is undefined. Please review the Docs https://github.com/PhilipRurka/easyBubble for more information.')
     }
   },
   listener: function(event, fadeIn) {
