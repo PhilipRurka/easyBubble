@@ -84,20 +84,28 @@ window.easyBubbleLib = {
           if(easyBubble.classList.contains('easy-bubble-click')) {
             easyBubbleTrigger.addEventListener('click', function(event) {
               easyBubbleLib.listener(event, true);
-            })
+            });
       
             easyBubbleTrigger.addEventListener('mouseleave', function(event) {
               easyBubbleLib.listener(event, false);
-            })
+            });
             
           } else if(easyBubble.classList.contains('easy-bubble-hover')) {
+            /** Save reference of some element items to easyBubbleWrapper */
+            easyBubbleWrapper.__easyBubble = easyBubble;
+            easyBubbleWrapper.__easyBubbleWrapper = easyBubbleWrapper;
+
+            easyBubbleWrapper.addEventListener('mouseenter', function(event) {
+              easyBubbleLib.listener(event, true);
+            });
+
             easyBubbleTrigger.addEventListener('mouseenter', function(event) {
               easyBubbleLib.listener(event, true);
-            })
-      
+            });
+
             easyBubbleTrigger.addEventListener('mouseleave', function(event) {
               easyBubbleLib.listener(event, false);
-            })
+            });
           }
         }
       }
@@ -110,23 +118,18 @@ window.easyBubbleLib = {
     var easyBubble = easyBubbleEvent.__easyBubble;
     var easyBubbleWrapper = easyBubbleEvent.__easyBubbleWrapper;
     var delay1, delay2, delay3;
+    var eventClick = !!easyBubble.classList.contains('easy-bubble-click');
     easyBubbleEvent.fadeIn = fadeIn;
   
-    if(easyBubble.classList.contains('easy-bubble-click')) {
+    if(eventClick) {
       delay1 = 0;
       delay2 = 500;
       delay3 = 250;
     } else {
-      if(easyBubble.classList.contains('hop-ellipsis')) {
-        delay1 = 1000;
-        delay2 = 750;      
-        delay3 = 0;
-      } else if(easyBubble.classList.contains('easy-bubble-hover')) {
-        delay1 = 0;
-        delay2 = 750;
-        delay3 = 0
-      }
-    }
+      delay1 = 250;
+      delay2 = 750;
+      delay3 = 0;
+    };
   
     if(easyBubbleEvent.fadeIn) {
       setTimeout(function() {
@@ -135,7 +138,7 @@ window.easyBubbleLib = {
           setTimeout(function() {
             easyBubbleWrapper.classList.add('pointer-bubble');
           }, 250);
-        }
+        };
       }, delay1);
       
     } else {
