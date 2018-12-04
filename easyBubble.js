@@ -1,38 +1,3 @@
-window.easy_bubble_colors = {
-  default: {
-    background_color: '#1b283b',
-    border_color: '#3CD2E0',
-    shadow_color: '#0C1A2B'
-  },
-  per_id: [
-    {
-      id: 'bubble-2',
-      background_color: '#A9E5BB',
-      border_color: '#E3170A',
-      shadow_color: '#0C1A2B'
-    },
-    {
-      id: 'bubble-3',
-      background_color: '#D8DCFF',
-      border_color: '#AEADF0',
-      shadow_color: '#D8DCFF'
-    },
-    {
-      id: 'bubble-4',
-      background_color: '#93BEDF',
-      border_color: '#8EF9F3',
-      shadow_color: '#5EFC8D'
-    },
-    {
-      id: 'bubble-5',
-      background_color: '#56223b',
-      border_color: '#3C6200',
-      shadow_color: '#0C1A2B'
-    },
-  ]
-}
-
-
 HTMLElement.prototype.pseudoStyle = function(element, prop, value) {
   var _this = this;
   var _sheetId = "pseudoStyles";
@@ -84,7 +49,7 @@ window.easyBubbleLib = {
             if (easyBubbleChild.classList.contains('easy-bubble-event')) {
               easyBubbleTrigger = easyBubbleChild.children[0];
               easyBubbleTrigger.classList.add('easy-bubble-trigger');
-              easyBubbleTrigger.appendChild(clone[0])
+              easyBubbleTrigger.appendChild(clone[0]);
 
             } else if (easyBubbleChild.classList.contains('easy-bubble-wrapper')) {
               easyBubbleWrapper = easyBubbleChild;
@@ -115,13 +80,13 @@ window.easyBubbleLib = {
                 
                 var boxShadowValue;
                 if(bubblePosition >= 1 && bubblePosition <= 3) {
-                  boxShadowValue = '-2px -2px 4px -1px';
+                  boxShadowValue = '-2px -2px 4px -1px ';
                 } else if(bubblePosition >= 4 && bubblePosition <= 6) {
-                  boxShadowValue = '2px -2px 4px -1px';
+                  boxShadowValue = '2px -2px 4px -1px ';
                 } else if(bubblePosition >= 7 && bubblePosition <= 9) {
-                  boxShadowValue = '2px 2px 4px -1px';
+                  boxShadowValue = '2px 2px 4px -1px ';
                 } else if(bubblePosition >= 10 && bubblePosition <= 12) {
-                  boxShadowValue = '-2px 2px 4px -1px';
+                  boxShadowValue = '-2px 2px 4px -1px ';
                 }
                 easyBubbleWrapper.pseudoStyle('before','box-shadow', boxShadowValue + set.shadow_color + ' !important');
               } else {
@@ -130,8 +95,9 @@ window.easyBubbleLib = {
             }
           }
 
-          easyBubbleTrigger.easyBubble = easyBubble;
-          easyBubbleTrigger.easyBubbleWrapper = easyBubbleWrapper;
+          /** Save reference of some element items to easyBubbleTrigger */
+          easyBubbleTrigger.__easyBubble = easyBubble;
+          easyBubbleTrigger.__easyBubbleWrapper = easyBubbleWrapper;
 
           if(easyBubble.classList.contains('easy-bubble-click')) {
             easyBubbleTrigger.addEventListener('click', function(event) {
@@ -159,8 +125,8 @@ window.easyBubbleLib = {
   },
   listener: function(event, fadeIn) {
     var easyBubbleEvent = event.currentTarget;
-    var easyBubble = easyBubbleEvent.easyBubble;
-    var easyBubbleWrapper = easyBubbleEvent.easyBubbleWrapper;
+    var easyBubble = easyBubbleEvent.__easyBubble;
+    var easyBubbleWrapper = easyBubbleEvent.__easyBubbleWrapper;
     var delay1, delay2, delay3;
     easyBubbleEvent.fadeIn = fadeIn;
   
@@ -188,7 +154,7 @@ window.easyBubbleLib = {
             easyBubbleWrapper.classList.add('pointer-bubble');
           }, 250);
         }
-      }, delay1)
+      }, delay1);
       
     } else {
       setTimeout(function() {
@@ -197,9 +163,9 @@ window.easyBubbleLib = {
           easyBubbleWrapper.classList.remove('pointer-bubble');
         }, delay2);
       }, delay3);
-    }
+    };
   }
-}
+};
 
 easyBubbleLib.init();
 
@@ -211,5 +177,5 @@ document.body.addEventListener('DOMSubtreeModified', function () {
     setTimeout(function() {
       easyBubbleLib.timeout = false
     }, 250);
-  }
+  };
 });
