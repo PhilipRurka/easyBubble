@@ -1,20 +1,3 @@
-HTMLElement.prototype.pseudoStyle = function(element, prop, value) {
-  var _this = this;
-  var _sheetId = "pseudoStyles";
-  var _head = document.head || document.getElementsByTagName('head')[0];
-  var _sheet = document.getElementById(_sheetId) || document.createElement('style');
-  _sheet.id = _sheetId;
-  easyBubbleLib.number++;
-  var className = "pseudoStyle" + easyBubbleLib.number;
-  
-  _this.className +=  " "+className; 
-  
-  _sheet.innerHTML += " ."+className+":"+element+"{"+prop+":"+value+"}";
-  _head.appendChild(_sheet);
-  return this;
-};
-
-
 window.easyBubbleLib = {
   timeout: false,
   number: 0,
@@ -62,12 +45,13 @@ window.easyBubbleLib = {
               easyBubbleContent.appendChild(clone[0]);
 
 
+              easyBubbleWrapper.style.cssText = 'border-color:' + set.border_color + '!important;'
               easyBubbleContainer.setAttribute('style', 'background-color:' + set.background_color + ';');
-              easyBubbleWrapper.pseudoStyle('before','border-color', set.border_color);
-              easyBubbleWrapper.pseudoStyle('after','border-color', set.border_color);
-              easyBubbleWrapper.pseudoStyle('after','background-color', set.background_color);
+              easyBubbleLib.pseudoStyle(easyBubbleWrapper, 'before','border-color', set.border_color);
+              easyBubbleLib.pseudoStyle(easyBubbleWrapper ,'after','border-color', set.border_color);
+              easyBubbleLib.pseudoStyle(easyBubbleWrapper, 'after','background-color', set.background_color);
               if(easyBubbleWrapper.classList.contains('easy-bubble-shadow')) {
-                easyBubbleWrapper.setAttribute('style', 'box-shadow: 0 0 6px 1px ' + set.shadow_color + '; border-color:' + set.border_color + '!important ;');
+                easyBubbleWrapper.style.cssText += 'box-shadow: 0 0 6px 1px ' + set.shadow_color + ';';
                 var bubblePosition;
                 for (let i = 0; i < easyBubbleWrapper.classList.length; i++) {
                   const bubbleClass = easyBubbleWrapper.classList[i];
@@ -88,12 +72,10 @@ window.easyBubbleLib = {
                 } else if(bubblePosition >= 10 && bubblePosition <= 12) {
                   boxShadowValue = '-2px 2px 4px -1px ';
                 }
-                easyBubbleWrapper.pseudoStyle('before','box-shadow', boxShadowValue + set.shadow_color + ' !important');
-              } else {
-                easyBubbleWrapper.setAttribute('style', 'border-color:' + set.border_color + ';');
-              }
-            }
-          }
+                easyBubbleLib.pseudoStyle(easyBubbleWrapper, 'before','box-shadow', boxShadowValue + set.shadow_color + ' !important');
+              };
+            };
+          };
 
           /** Save reference of some element items to easyBubbleTrigger */
           easyBubbleTrigger.__easyBubble = easyBubble;
@@ -164,6 +146,19 @@ window.easyBubbleLib = {
         }, delay2);
       }, delay3);
     };
+  },
+  pseudoStyle: function(element, pseudoElement, prop, value) {
+    var head = document.head || document.getElementsByTagName('head')[0];
+    var _sheet = document.getElementById("pseudoStyles") || document.createElement('style');
+    _sheet.id = "pseudoStyles";
+    easyBubbleLib.number++;
+    var className = "pseudoStyle" + easyBubbleLib.number;
+    
+    element.className += " " + className; 
+    
+    _sheet.innerHTML += " ." + className + ":" + pseudoElement + "{" + prop + ":" + value + "}";
+    head.appendChild(_sheet);
+    return this;
   }
 };
 
