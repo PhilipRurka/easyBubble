@@ -7,13 +7,15 @@ window.easyBubbleLib = {
       for (var i = 0; i < easyList.length; i++) {
         var easyBubble = easyList[i];
         var set = undefined;
-        for (let i = 0; i < easy_bubble_colors.per_id.length; i++) {
-          const colorObj = easy_bubble_colors.per_id[i];
-          if(colorObj.id === easyBubble.id) {   
-            set = colorObj;
-            break
-          }
-        };
+        if(easy_bubble_colors.per_id) {
+          for (let i = 0; i < easy_bubble_colors.per_id.length; i++) {
+            const colorObj = easy_bubble_colors.per_id[i];
+            if(colorObj.id === easyBubble.id) {   
+              set = colorObj;
+              break
+            }
+          };
+        }
 
         set = set || easy_bubble_colors.default;
 
