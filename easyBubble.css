@@ -12,11 +12,7 @@
   display: table;
 }
 
-.easy-bubble-hover .easy-bubble-wrapper {
-  transition: opacity 0.5s ease 0.25s;
-}
-
-.easy-bubble-click .easy-bubble-wrapper {
+.easy-bubble-wrapper {
   transition: opacity 0.5s ease;
 }
 
