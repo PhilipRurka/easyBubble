@@ -1,8 +1,8 @@
 window.easy_bubble_colors = {
   default: {
-    background_color: '#1b283b',
-    border_color: '#3CD2E0',
-    shadow_color: '#0C1A2B'
+    background_color: '#000',
+    border_color: '#fff',
+    shadow_color: '#000'
   },
   per_id: [
     {
@@ -25,8 +25,8 @@ window.easy_bubble_colors = {
     },
     {
       id: 'bubble-5',
-      background_color: '#56223b',
-      border_color: '#3C6200',
+      background_color: '#1b283b',
+      border_color: '#3CD2E0',
       shadow_color: '#0C1A2B'
     },
   ]
