@@ -1,6 +1,7 @@
 window.easyBubbleLib = {
   timeout: false,
   number: 0,
+  randomNumber: null,
   init: function() {
     if(!!window.easy_bubble_colors) {
       var easyList = document.getElementsByClassName('easy-bubble');
@@ -85,11 +86,11 @@ window.easyBubbleLib = {
 
           if(easyBubble.classList.contains('easy-bubble-click')) {
             easyBubbleTrigger.addEventListener('click', function(event) {
-              easyBubbleLib.listener(event, true);
+              easyBubbleLib.listener(event, true, easyBubbleLib.generateUniqueNumber());
             });
       
             easyBubbleTrigger.addEventListener('mouseleave', function(event) {
-              easyBubbleLib.listener(event, false);
+              easyBubbleLib.listener(event, false, easyBubbleLib.generateUniqueNumber());
             });
             
           } else if(easyBubble.classList.contains('easy-bubble-hover')) {
@@ -102,11 +103,11 @@ window.easyBubbleLib = {
             });
 
             easyBubbleTrigger.addEventListener('mouseenter', function(event) {
-              easyBubbleLib.listener(event, true);
+              easyBubbleLib.listener(event, true, easyBubbleLib.generateUniqueNumber());
             });
 
             easyBubbleTrigger.addEventListener('mouseleave', function(event) {
-              easyBubbleLib.listener(event, false);
+              easyBubbleLib.listener(event, false, easyBubbleLib.generateUniqueNumber());
             });
           }
         }
@@ -115,7 +116,7 @@ window.easyBubbleLib = {
       console.error('The global variable called "window.easy_bubble_colors" is undefined. Please review the Docs https://github.com/PhilipRurka/easyBubble for more information.')
     }
   },
-  listener: function(event, fadeIn) {
+  listener: function(event, fadeIn, randomNumber) {
     var easyBubbleEvent = event.currentTarget;
     var easyBubble = easyBubbleEvent.__easyBubble;
     var easyBubbleWrapper = easyBubbleEvent.__easyBubbleWrapper;
@@ -135,18 +136,20 @@ window.easyBubbleLib = {
   
     if(easyBubbleEvent.fadeIn) {
       setTimeout(function() {
-        if(easyBubbleEvent.fadeIn) {
-          easyBubbleWrapper.classList.add('show-bubble');
-          setTimeout(function() {
-            easyBubbleWrapper.classList.add('pointer-bubble');
-          }, 250);
-        };
+        if(randomNumber !== easyBubbleLib.randomNumber) { return };
+        easyBubbleWrapper.classList.add('show-bubble');
+        setTimeout(function() {
+          if(randomNumber !== easyBubbleLib.randomNumber) { return };
+          easyBubbleWrapper.classList.add('pointer-bubble');
+        }, 250);
       }, delay1);
       
     } else {
       setTimeout(function() {
+        if(randomNumber !== easyBubbleLib.randomNumber) { return };
         easyBubbleWrapper.classList.remove('show-bubble');
         setTimeout(function() {
+          if(randomNumber !== easyBubbleLib.randomNumber) { return };
           easyBubbleWrapper.classList.remove('pointer-bubble');
         }, delay2);
       }, delay3);
@@ -164,6 +167,10 @@ window.easyBubbleLib = {
     _sheet.innerHTML += " ." + className + ":" + pseudoElement + "{" + prop + ":" + value + "}";
     head.appendChild(_sheet);
     return this;
+  },
+  generateUniqueNumber: function() {
+    easyBubbleLib.randomNumber = Math.random();
+    return easyBubbleLib.randomNumber;
   }
 };
 
