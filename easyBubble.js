@@ -24,8 +24,6 @@ window.easyBubbleLib = {
 
       set = set || easy_bubble_colors.default;
       if(!easyBubble.classList.contains('tracked')) {
-        var easyBubbleWrapper,
-            easyBubbleTrigger;
 
         for (var ii = 0; ii < easyBubble.children.length; ii++) {
           easyBubble.classList.add('tracked')
@@ -35,13 +33,14 @@ window.easyBubbleLib = {
           var div = document.createElement("div");
           easyBubbleChild.appendChild(div);
 
-          if (easyBubbleChild.classList.contains('easy-bubble-event')) {
-            easyBubbleTrigger = easyBubbleChild.children[0];
+          if(easyBubbleChild.classList.contains('easy-bubble-event')) {
+            var easyBubbleEvent = easyBubbleChild;
+            var easyBubbleTrigger = easyBubbleChild.children[0];
             easyBubbleTrigger.classList.add('easy-bubble-trigger');
             easyBubbleTrigger.appendChild(clone[0]);
 
-          } else if (easyBubbleChild.classList.contains('easy-bubble-wrapper')) {
-            easyBubbleWrapper = easyBubbleChild;
+          } else if(easyBubbleChild.classList.contains('easy-bubble-wrapper')) {
+            var easyBubbleWrapper = easyBubbleChild;
             var easyBubbleContainer = easyBubbleChild.children[0];
             easyBubbleContainer.classList.add('easy-bubble-container');
             div = document.createElement("div");
@@ -49,7 +48,6 @@ window.easyBubbleLib = {
             var easyBubbleContent = easyBubbleContainer.children[0];
             easyBubbleContent.classList.add('easy-bubble-content');
             easyBubbleContent.appendChild(clone[0]);
-
 
             easyBubbleWrapper.style.cssText = 'border-color:' + set.border_color + '!important;'
             easyBubbleContainer.setAttribute('style', 'background-color:' + set.background_color + ';');
@@ -85,9 +83,10 @@ window.easyBubbleLib = {
 
         /** Save reference of some element items to easyBubbleTrigger */
         easyBubbleTrigger.__easyBubble = easyBubble;
+        easyBubbleTrigger.__easyBubbleEvent = easyBubbleEvent;
         easyBubbleTrigger.__easyBubbleWrapper = easyBubbleWrapper;
 
-        if(easyBubble.classList.contains('easy-bubble-click')) {
+        if(easyBubbleEvent.classList.contains('easy-bubble-click')) {
           easyBubbleTrigger.addEventListener('click', function(event) {
             easyBubbleLib.listener(event, true, easyBubbleLib.generateUniqueNumber(event));
           });
@@ -96,9 +95,10 @@ window.easyBubbleLib = {
             easyBubbleLib.listener(event, false, easyBubbleLib.generateUniqueNumber(event));
           });
           
-        } else if(easyBubble.classList.contains('easy-bubble-hover')) {
+        } else if(easyBubbleEvent.classList.contains('easy-bubble-hover')) {
           /** Save reference of some element items to easyBubbleWrapper */
           easyBubbleWrapper.__easyBubble = easyBubble;
+          easyBubbleWrapper.__easyBubbleEvent = easyBubble;
           easyBubbleWrapper.__easyBubbleWrapper = easyBubbleWrapper;
 
           easyBubbleWrapper.addEventListener('mouseenter', function(event) {
@@ -121,12 +121,13 @@ window.easyBubbleLib = {
     }
   },
   listener: function(event, fadeIn, randomNumber) {
-    var easyBubbleEvent = event.currentTarget;
-    var easyBubble = easyBubbleEvent.__easyBubble;
-    var easyBubbleWrapper = easyBubbleEvent.__easyBubbleWrapper;
+    var easyBubbleTarget = event.currentTarget;
+    var easyBubble = easyBubbleTarget.__easyBubble;
+    var easyBubbleEvent = easyBubbleTarget.__easyBubbleEvent;
+    var easyBubbleWrapper = easyBubbleTarget.__easyBubbleWrapper;
     var delay1, delay2, delay3;
-    var eventClick = !!easyBubble.classList.contains('easy-bubble-click');
-    easyBubbleEvent.fadeIn = fadeIn;
+    var eventClick = !!easyBubbleEvent.classList.contains('easy-bubble-click');
+    easyBubbleTarget.fadeIn = fadeIn;
   
     if(eventClick) {
       delay1 = 0;
@@ -138,7 +139,7 @@ window.easyBubbleLib = {
       delay3 = 0;
     };
   
-    if(easyBubbleEvent.fadeIn) {
+    if(easyBubbleTarget.fadeIn) {
       setTimeout(function() {
         if(randomNumber !== easyBubble.__randomNumber) { return };
         easyBubbleWrapper.classList.add('show-bubble');
