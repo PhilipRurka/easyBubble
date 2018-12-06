@@ -14,7 +14,9 @@ In your HTML, you will want to begin
 ```html
 <div class='easy-bubble'>
   <div class='easy-bubble-event'>
-    <!-- Item(s) you want to be part of the event trigger. -->
+    <div class='easy-bubble-trigger'>
+      <!-- Item(s) you want to be part of the event trigger. -->
+    </div>
   </div>
   <div class='easy-bubble-wrapper'>
     <div class='easy-bubble-content'>
@@ -27,13 +29,15 @@ In your HTML, you will want to begin
 Once you have set that up, now you must choose an event that will trigger the bubble. Your options are the following.
 - Click Event
 ```html
-<div class='easy-bubble easy-bubble-click'>
-  ...
+<div class='easy-bubble'>
+  <div class='easy-bubble-event easy-bubble-click'>
+    ...
 ```
 or
 - Hover Event
 ```html
-<div class='easy-bubble easy-bubble-hover'>
+<div class='easy-bubble'>
+  <div class='easy-bubble-event easy-bubble-hover'>
   ...
 ```
 
