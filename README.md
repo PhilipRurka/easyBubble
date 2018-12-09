@@ -1,5 +1,5 @@
 # ezabble
-Its a Simple Nano Library that helps beautifully creates Popup Bubbles with minimal code.
+Its a Simple Nano Library that helps beautifully creates tooltips with minimal code.
 
 ## Demo
 https://philiprurka.github.io/easyBubble/
@@ -25,7 +25,7 @@ Coming Soon!
 ```
 ---
 ### Event Type
-Once you have set that up, now you must choose an event that will trigger the bubble. Your options are the following.
+Once you have set that up, now you must choose an event that will trigger the tooltip. Your options are the following.
 #### Click Event
 ```html
 <div class='ezabble'>
@@ -41,12 +41,12 @@ or
 ```
 ---
 ### Position
-Great, now you must identify the position you want your bubble to display in. You can chose position 1 - 12. You can try each positions in the demo.
+Great, now you must identify the position you want your tooltip to display in. You can chose position 1 - 12. You can try each positions in the demo.
 ```html
 <div class='ezabble-wrapper ezabble-pos-1'>
   ...
 ```
-The position of the trangle that pokes out of the bubble is determined by a 12 grid system around a square. Example:
+The position of the trangle that pokes out of the tooltip is determined by a 12 grid system around a square. Example:
 (Image displaying examples)
 
 ## Additional Information
