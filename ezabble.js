@@ -1,3 +1,12 @@
+/**
+ * My logical steps.
+ * Use the library's default color scheme if window.ezabble_colors is undefined.
+ * Retreive all elements with classname "ezabble".
+ * For each element stored in ezabbleList, apply the following logic.
+ * If the key "per_id" is present in the window.ezabble_colors Object
+ * 
+ */
+
 window.ezabbleLib = {
   timeout: false,
   number: 0,
@@ -7,17 +16,22 @@ window.ezabbleLib = {
     shadow_color: '#000'
   },
   init: function() {
+    /** Use the library's default color scheme if window.ezabble_colors is undefined. */
     window.ezabble_colors = window.ezabble_colors || defaultColors;
+    /** Retreive all elements with classname ezabble. */
     var ezabbleList = document.getElementsByClassName('ezabble');
+    /** For each element stored in ezabbleList, apply the following logic. */
     for (var i = 0; i < ezabbleList.length; i++) {
       var ezabble = ezabbleList[i];
       var set = undefined;
+      /** If the key "per_id" is present in the window.ezabble_colors Object. */
       if(ezabble_colors.per_id) {
+        /**  */
         for (let i = 0; i < ezabble_colors.per_id.length; i++) {
           const colorObj = ezabble_colors.per_id[i];
           if(colorObj.id === ezabble.id) {   
             set = colorObj;
-            break
+            break;
           };
         };
       };
