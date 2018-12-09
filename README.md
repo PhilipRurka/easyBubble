@@ -2,7 +2,7 @@
 Its a Simple Nano Library that helps beautifully creates tooltips with minimal code.
 
 ## Demo
-https://philiprurka.github.io/easyBubble/
+https://philiprurka.github.io/ezabble/
 
 ## CDN
 Coming Soon!
@@ -41,7 +41,7 @@ or
 ```
 ---
 ### Position
-Great, now you must identify the position you want your tooltip to display in. You can chose position 1 - 12. You can try each positions in the demo.
+Great, now you must identify the position you want your tooltip to display in. You can chose position 1 - 12. You can try each positions in the [demo](https://philiprurka.github.io/ezabble/).
 ```html
 <div class='ezabble-wrapper ezabble-pos-1'>
   ...
