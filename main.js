@@ -1,4 +1,4 @@
-window.easy_bubble_colors = {
+window.ezabble_colors = {
   default: {
     background_color: '#000',
     border_color: '#fff',
