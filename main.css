@@ -10,10 +10,9 @@ body {
 .grid-section {
   position: relative;
   display: table;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   margin: auto;
-  border: 1px solid black;
 }
 
 ul {
@@ -29,11 +28,132 @@ li {
 
 li button {
   border-radius: 10px;
-  height: 50px;
-  width: 50px;
   color: white;
   background-color: #1b283b;
   font-size: 16px;
+  padding: 0;
+  border: none;
+  position: relative;
+}
+
+li button::before {
+  content: '';
+  position: absolute;
+  width: 0; 
+  height: 0; 
+}
+
+/** START Up Triangle START */
+.row-1 li button::before {
+  top: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #1b283b;
+}
+
+.row-1 li:nth-child(1) button::before {
+  left: 15px;
+  transform: translateY(-100%);
+}
+
+.row-1 li:nth-child(2) button::before {
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+
+.row-1 li:nth-child(3) button::before {
+  right: 15px;
+  transform: translateY(-100%);
+}
+/** END Up Triangle END */
+
+/** START Left Triangle START */
+.row-2 li:nth-child(1) button::before,
+.row-3 li:nth-child(1) button::before,
+.row-4 li:nth-child(1) button::before {
+  left: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid #1b283b;
+}
+
+.row-2 li:nth-child(1) button::before {
+  top: 15px;
+  transform: translateX(-100%);
+}
+
+.row-3 li:nth-child(1) button::before {
+  top: 50%;
+  transform: translate(-100%, -50%);
+}
+
+.row-4 li:nth-child(1) button::before {
+  bottom: 15px;
+  transform: translateX(-100%);
+}
+/** END Left Triangle END */
+
+/** START Right Triangle START */
+.row-2 li:nth-child(3) button::before,
+.row-3 li:nth-child(3) button::before,
+.row-4 li:nth-child(3) button::before {
+  right: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #1b283b;
+}
+
+.row-2 li:nth-child(3) button::before {
+  top: 15px;
+  transform: translateX(100%);
+}
+
+.row-3 li:nth-child(3) button::before {
+  top: 50%;
+  transform: translate(100%, -50%);
+}
+
+.row-4 li:nth-child(3) button::before {
+  bottom: 15px;
+  transform: translateX(100%);
+}
+/** END Right Triangle END */
+
+/** START Down Triangle START */
+.row-5 li button::before {
+  bottom: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #1b283b;
+}
+
+.row-5 li:nth-child(1) button::before {
+  left: 15px;
+  transform: translateY(100%);
+}
+
+.row-5 li:nth-child(2) button::before {
+  left: 50%;
+  transform: translate(-50%, 100%);
+}
+
+.row-5 li:nth-child(3) button::before {
+  right: 15px;
+  transform: translateY(100%);
+}
+/** END Down Triangle END */
+
+.row-1 li button,
+.row-5 li button {
+  height: 22px;
+  width: 100px;
+}
+
+.row-2 li button,
+.row-3 li button,
+.row-4 li button {
+  height: 100px;
+  width: 22px;
 }
 
 .row-1,
@@ -46,7 +166,7 @@ li button {
 /** FIRST ROW */
 .row-1 li:first-child {
   bottom: 100%;
-  right: calc(100% - 80px);
+  right: calc(100% - 110px);
 }
 
 .row-1 li:nth-child(2) {
@@ -57,18 +177,18 @@ li button {
 
 .row-1 li:last-child {
   bottom: 100%;
-  left: calc(100% - 80px);
+  left: calc(100% - 110px);
 }
 
 
 /** SECOND ROW */
 .row-2 li:first-child {
-  bottom: calc(100% - 80px);
+  bottom: calc(100% - 110px);
   right: 100%;
 }
 
 .row-2 li:last-child {
-  bottom: calc(100% - 80px);
+  bottom: calc(100% - 110px);
   left: 100%;
 }
 
@@ -89,12 +209,12 @@ li button {
 
 /** FOURTH ROW */
 .row-4 li:first-child {
-  top: calc(100% - 80px);
+  top: calc(100% - 110px);
   right: 100%;
 }
 
 .row-4 li:last-child {
-  top: calc(100% - 80px);
+  top: calc(100% - 110px);
   left: 100%;
 }
 
@@ -102,7 +222,7 @@ li button {
 /** FIFTH ROW */
 .row-5 li:first-child {
   top: 100%;
-  right: calc(100% - 80px);
+  right: calc(100% - 110px);
 }
 
 .row-5 li:nth-child(2) {
@@ -113,7 +233,7 @@ li button {
 
 .row-5 li:last-child {
   top: 100%;
-  left: calc(100% - 80px);
+  left: calc(100% - 110px);
 }
 
 
