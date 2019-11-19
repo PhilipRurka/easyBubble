@@ -179,7 +179,7 @@ window.ezabbleLib = {
 
 ezabbleLib.init();
 
-document.body.addEventListener('DOMSubtreeModified', function () {
+document.body.addEventListener('DOMSubtreeModified', function() {
   // This Timeout Condition may prevent the last iteration from happenning
   if(!ezabbleLib.timeout) {
     ezabbleLib.init();
