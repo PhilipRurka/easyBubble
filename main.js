@@ -2,40 +2,40 @@
 
 window.ezabble_colors = {
   default: {
-    background_color: '#fff',
-    border_color: '#000',
-    shadow_color: '#000'
+    backgroundColor: '#fff',
+    borderColor: '#000',
+    shadowColor: '#000'
   },
   per_id: [
     {
       id: 'bubble-2',
-      background_color: '#A9E5BB',
-      border_color: '#E3170A',
-      shadow_color: '#0C1A2B'
+      backgroundColor: '#A9E5BB',
+      borderColor: '#E3170A',
+      shadowColor: '#0C1A2B'
     },
     {
       id: 'bubble-3',
-      background_color: '#D8DCFF',
-      border_color: '#AEADF0',
-      shadow_color: '#D8DCFF'
+      backgroundColor: '#D8DCFF',
+      borderColor: '#AEADF0',
+      shadowColor: '#D8DCFF'
     },
     {
       id: 'bubble-4',
-      background_color: '#93BEDF',
-      border_color: '#8EF9F3',
-      shadow_color: '#5EFC8D'
+      backgroundColor: '#93BEDF',
+      borderColor: '#8EF9F3',
+      shadowColor: '#5EFC8D'
     },
     {
       id: 'bubble-5',
-      background_color: '#1b283b',
-      border_color: '#3CD2E0',
-      shadow_color: '#0C1A2B'
+      backgroundColor: '#1b283b',
+      borderColor: '#3CD2E0',
+      shadowColor: '#0C1A2B'
     },
     {
       id: 'bubble-6',
-      background_color: '#F56416',
-      border_color: '#F56416',
-      shadow_color: '#0C1A2B'
+      backgroundColor: '#F56416',
+      borderColor: '#F56416',
+      shadowColor: '#0C1A2B'
     }
   ]
 };

@@ -8,9 +8,9 @@ window.ezabbleLib = {
   timeout: false,
   number: 0,
   defaultColors: {
-    background_color: '#000',
-    border_color: '#fff',
-    shadow_color: '#000'
+    backgroundColor: '#000',
+    borderColor: '#fff',
+    shadowColor: '#000'
   },
   init: function() {
     /** Use the library's default color scheme if window.ezabble_colors is undefined. */
@@ -63,13 +63,13 @@ window.ezabbleLib = {
             ezabbleContent.classList.add('ezabble-content');
             ezabbleContent.appendChild(clone[0]);
 
-            ezabbleWrapper.style.cssText = 'border-color:' + set.border_color + '!important;'
-            ezabbleContainer.setAttribute('style', 'background-color:' + set.background_color + ';');
-            ezabbleLib.pseudoStyle(ezabbleWrapper, 'before','border-color', set.border_color);
-            ezabbleLib.pseudoStyle(ezabbleWrapper ,'after','border-color', set.border_color);
-            ezabbleLib.pseudoStyle(ezabbleWrapper, 'after','background-color', set.background_color);
+            ezabbleWrapper.style.cssText = 'border-color:' + set.borderColor + '!important;'
+            ezabbleContainer.setAttribute('style', 'background-color:' + set.backgroundColor + ';');
+            ezabbleLib.pseudoStyle(ezabbleWrapper, 'before','border-color', set.borderColor);
+            ezabbleLib.pseudoStyle(ezabbleWrapper ,'after','border-color', set.borderColor);
+            ezabbleLib.pseudoStyle(ezabbleWrapper, 'after','background-color', set.backgroundColor);
             if(ezabbleWrapper.classList.contains('ezabble-shadow')) {
-              ezabbleWrapper.style.cssText += 'box-shadow: 0 0 6px 1px ' + set.shadow_color + ';';
+              ezabbleWrapper.style.cssText += 'box-shadow: 0 0 6px 1px ' + set.shadowColor + ';';
               var ezabblePosition;
               for (var iiii = 0; iiii < ezabbleWrapper.classList.length; iiii++) {
                 var ezabbleClass = ezabbleWrapper.classList[iiii];
@@ -90,7 +90,7 @@ window.ezabbleLib = {
               } else if(ezabblePosition >= 10 && ezabblePosition <= 12) {
                 boxShadowValue = '-2px 2px 4px -1px ';
               }
-              ezabbleLib.pseudoStyle(ezabbleWrapper, 'before','box-shadow', boxShadowValue + set.shadow_color + ' !important');
+              ezabbleLib.pseudoStyle(ezabbleWrapper, 'before','box-shadow', boxShadowValue + set.shadowColor + ' !important');
             };
           };
         };
