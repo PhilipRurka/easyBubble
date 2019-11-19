@@ -1,4 +1,4 @@
-# ezabble
+# Ezabble
 Its a Simple Nano Library that helps you create beautiful tooltips with minimal code.
 
 ## Demo
@@ -43,7 +43,7 @@ Great, now you must identify the position you want your tooltip to display in. Y
 <div class='ezabble-wrapper ezabble-pos-1'>
   ...
 ```
-The position of the trangle that pokes out of the tooltip is determined by a 12 grid system around a square. ![12 Grid System](12-grid-system.png)
+The position of the trangle that pokes out of the tooltip is determined by a 12 grid system around a square. ![12 Grid System](https://philiprurka.github.io/ezabble/12-grid-system.png)
 
 ## Additional Information
 Now that we have the bare minimum, lets customize our bubbles.
