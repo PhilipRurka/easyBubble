@@ -1,4 +1,4 @@
-# ezabble
+# Ezabble
 Its a Simple Nano Library that helps you create beautiful tooltips with minimal code.
 
 ## Demo
@@ -21,7 +21,7 @@ Coming Soon!
 ```
 ---
 ### Event Type
-Once you have set that up, now you must choose an event that will trigger the tooltip. Your options are the following.
+Once you have set that up, now you must choose an event type that will trigger the tooltip. Your options are the following.
 #### Click Event
 ```html
 <div class='ezabble'>
@@ -39,11 +39,11 @@ or
 ### Position
 Great, now you must identify the position you want your tooltip to display in. You can chose position 1 - 12. You can try each positions in the [demo](https://philiprurka.github.io/ezabble/).
 ```html
+...
 <div class='ezabble-wrapper ezabble-pos-1'>
   ...
 ```
-The position of the trangle that pokes out of the tooltip is determined by a 12 grid system around a square. Example:
-(Image displaying examples)
+The position of the trangle that pokes out of the tooltip is determined by a 12 grid system around a square. ![12 Grid System](https://philiprurka.github.io/ezabble/12-grid-system.png)
 
 ## Additional Information
 Now that we have the bare minimum, lets customize our bubbles.
