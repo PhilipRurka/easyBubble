@@ -21,7 +21,7 @@ Coming Soon!
 ```
 ---
 ### Event Type
-Once you have set that up, now you must choose an event that will trigger the tooltip. Your options are the following.
+Once you have set that up, now you must choose an event type that will trigger the tooltip. Your options are the following.
 #### Click Event
 ```html
 <div class='ezabble'>
@@ -39,6 +39,7 @@ or
 ### Position
 Great, now you must identify the position you want your tooltip to display in. You can chose position 1 - 12. You can try each positions in the [demo](https://philiprurka.github.io/ezabble/).
 ```html
+...
 <div class='ezabble-wrapper ezabble-pos-1'>
   ...
 ```
