@@ -4,8 +4,9 @@ Its a Simple Nano Library that helps you create beautiful tooltips with minimal 
 ## Demo
 https://philiprurka.github.io/ezabble/
 
-## CDN
-Coming Soon!
+## Links
+**CSS:** https://github.com/PhilipRurka/ezabble/blob/dev/library/ezabble.css <br />
+**JS:** https://github.com/PhilipRurka/ezabble/blob/master/library/ezabble.js
 
 ## How To Use
 ### HTML
@@ -44,7 +45,10 @@ Great, now you must identify the position you want your tooltip to display in. Y
   ...
 ```
 The position of the trangle that pokes out of the tooltip is determined by a 12 grid system around a square.
-<img src="/12-grid-system.png" alt="12 Grid System" width="40%">
+<img src="/demo/12-grid-system.png" alt="12 Grid System" width="40%">
+
+## Re-Initialize
+By default, once the JS folder initially runs, it will crall all ezabbles and work its magic. However, a new one is created, you can re-initialize ezabble by calling `ezabbleLib.init();`
 
 ## Additional Information
 Now that we have the bare minimum, lets customize our bubbles.
@@ -54,21 +58,21 @@ To adjuste the default color, create a `window.ezabble_colors` object.
 ```javascript
 window.ezabble_colors = {
   default: {
-    backgroundColor: '#000',
-    borderColor: '#fff',
-    shadowColor: '#000'
+    backgroundColor: 'Some Color',
+    borderColor: 'Some Color',
+    shadowColor: 'Some Color'
   }
 }
 ```
 If you want to target specific ezabbles, add the `per_id` key and for match the id of the ezabble with each object's id within the array. Example:
 ```html
-<div id='bubble-2', class='ezabble'>
+<div id='bubble-2' class='ezabble'>
   ...
 </div>
-<div id='bubble-3', class='ezabble'>
+<div id='bubble-3' class='ezabble'>
   ...
 </div>
-<div id='bubble-4', class='ezabble'>
+<div id='bubble-4' class='ezabble'>
   ...
 </div>
 ```
