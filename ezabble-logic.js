@@ -1,3 +1,9 @@
+/**
+ * The purpose of this file is to help new developers learn
+ * some Javascript by providing a breakdown and information
+ * regarding the steps I took to build ezabble.
+ */
+
 window.ezabbleLib = {
   timeout: false,
   number: 0,
@@ -7,12 +13,17 @@ window.ezabbleLib = {
     shadow_color: '#000'
   },
   init: function() {
+    /** Use the library's default color scheme if window.ezabble_colors is undefined. */
     window.ezabble_colors = window.ezabble_colors || defaultColors;
+    /** Retreive all elements with classname ezabble. */
     var ezabbleList = document.getElementsByClassName('ezabble');
+    /** For each element stored in ezabbleList, apply the following logic. */
     for (var i = 0; i < ezabbleList.length; i++) {
       var ezabble = ezabbleList[i];
       var set = undefined;
+      /** If the key "per_id" is present in the window.ezabble_colors Object. */
       if(ezabble_colors.per_id) {
+        /** Iterate over the ezabble_colors.per_id array, find and store the appropriate color for the current ezabble.*/
         for (var ii = 0; ii < ezabble_colors.per_id.length; ii++) {
           var colorObj = ezabble_colors.per_id[ii];
           if(colorObj.id === ezabble.id) {
@@ -22,11 +33,14 @@ window.ezabbleLib = {
         };
       };
 
+      /** If window.ezabble_colors is defined and no id's match, then set the color object to be the ezabble_colors's default */
       set = set || ezabble_colors.default;
+      /** If the ezabble element does not contain ".tracked" then do the following. Otherwize, skip this entire section. The ".tracked" class gets added to the ezabble's class list. This helps prevent re-iterating over a ezable that has already been set. */
       if(!ezabble.classList.contains('tracked')) {
+        ezabble.classList.add('tracked')
 
-        for (var iii = 0; iii < ezabble.children.length; iii++) {
-          ezabble.classList.add('tracked')
+        /** If you consult the demo's HTML, you will notice that .ezabble has two direct children ".ezabble-event" and ".ezabble-wrapper". This for loop grabs then both and applies the following to each of them. */
+        for (var iii = 0; iii < ezabble.children.length; ii++) {
           var ezabbleChild = ezabble.children[iii];
           var clone = ezabbleChild.cloneNode(true).children
           ezabbleChild.children[0].remove();
@@ -81,6 +95,7 @@ window.ezabbleLib = {
           };
         };
 
+        /** Save reference of some element items to ezabbleTrigger */
         ezabbleTrigger.__ezabble = ezabble;
         ezabbleTrigger.__ezabbleEvent = ezabbleEvent;
         ezabbleTrigger.__ezabbleWrapper = ezabbleWrapper;
@@ -95,6 +110,7 @@ window.ezabbleLib = {
           });
           
         } else if(ezabbleEvent.classList.contains('ezabble-hover')) {
+          /** Save reference of some element items to ezabbleWrapper */
           ezabbleWrapper.__ezabble = ezabble;
           ezabbleWrapper.__ezabbleEvent = ezabble;
           ezabbleWrapper.__ezabbleWrapper = ezabbleWrapper;
@@ -141,7 +157,10 @@ window.ezabbleLib = {
       setTimeout(function() {
         if(randomNumber !== ezabble.__randomNumber) { return };
         ezabbleWrapper.classList.add('show-ezabble');
-        ezabbleWrapper.classList.add('pointer-ezabble');
+        setTimeout(function() {
+          if(randomNumber !== ezabble.__randomNumber) { return };
+          ezabbleWrapper.classList.add('pointer-ezabble');
+        }, 250);
       }, delay1);
       
     } else {

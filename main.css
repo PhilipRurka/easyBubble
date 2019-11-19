@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 section {
   margin: 4rem;
 }
@@ -5,6 +9,7 @@ section {
 body {
   background-color: white;
   margin-top: 100px;
+  min-width: 450px;
 }
 
 .grid-section {
@@ -248,4 +253,21 @@ li button::before {
 
 #bubble-4 span {
   color: #3d3286;
+}
+
+.header {
+  margin: 0 auto 50px;
+  width: 450px;
+  display: table;
+}
+
+
+h1,
+h2 {
+  display: inline-block;
+}
+
+h2 {
+  margin-left: 10px;
+  font-weight: 100;
 }

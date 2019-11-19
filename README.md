@@ -1,5 +1,5 @@
 # ezabble
-Its a Simple Nano Library that helps beautifully creates tooltips with minimal code.
+Its a Simple Nano Library that helps you create beautiful tooltips with minimal code.
 
 ## Demo
 https://philiprurka.github.io/ezabble/
@@ -12,14 +12,10 @@ Coming Soon!
 ```html
 <div class='ezabble'>
   <div class='ezabble-event'>
-    <div class='ezabble-trigger'>
-      <!-- Item(s) you want to be part of the event trigger. -->
-    </div>
+    <!-- Item(s) you want to be part of the event trigger. -->
   </div>
   <div class='ezabble-wrapper'>
-    <div class='ezabble-content'>
-      <!-- Content you want displayed in the ezabble -->
-    </div>
+    <!-- Content you want displayed in the ezabble -->
   </div>
 </div>
 ```

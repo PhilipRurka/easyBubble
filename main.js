@@ -31,3 +31,13 @@ window.ezabble_colors = {
     },
   ]
 };
+
+var positionDisplayed = document.getElementById('ezabble-position-selected');
+var ezabbles = document.getElementsByClassName('ezabble');
+for (var i = 0; i < ezabbles.length; i++) {
+  var ezabble = ezabbles[i];
+  ezabble.children[0].addEventListener('click', function(event) {
+    var button = event.currentTarget.children[0].children[0]
+    positionDisplayed.innerHTML = 'ezabble-pos-' +  button.innerHTML;
+  }); 
+}
