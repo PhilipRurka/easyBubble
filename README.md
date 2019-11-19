@@ -76,29 +76,24 @@ If you want to target specific ezabbles, add the `per_id` key and for match the 
 ```javascript
 window.ezabble_colors = {
   default: {
-    backgroundColor: '#000',
-    borderColor: '#fff',
-    shadowColor: '#000'
+    backgroundColor: 'Some Color',
+    borderColor: 'Some Color',
+    shadowColor: 'Some Color'
   },
   per_id: [
     {
-      id: 'bubble-2',
-      backgroundColor: '#A9E5BB',
-      borderColor: '#E3170A',
-      shadowColor: '#0C1A2B'
+      id: 'Some Id',
+      backgroundColor: 'Some Color',
+      borderColor: 'Some Color',
+      shadowColor: 'Some Color'
     },
     {
-      id: 'bubble-3',
-      backgroundColor: '#D8DCFF',
-      borderColor: '#AEADF0',
-      shadowColor: '#D8DCFF'
+      id: 'Some Id',
+      backgroundColor: 'Some Color',
+      borderColor: 'Some Color',
+      shadowColor: 'Some Color'
     },
-    {
-      id: 'bubble-4',
-      backgroundColor: '#93BEDF',
-      borderColor: '#8EF9F3',
-      shadowColor: '#5EFC8D'
-    }
+    ...
   ]
 }
 ```
