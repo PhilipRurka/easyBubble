@@ -66,13 +66,13 @@ window.ezabble_colors = {
 ```
 If you want to target specific ezabbles, add the `per_id` key and for match the id of the ezabble with each object's id within the array. Example:
 ```html
-<div id='bubble-2', class='ezabble'>
+<div id='bubble-2' class='ezabble'>
   ...
 </div>
-<div id='bubble-3', class='ezabble'>
+<div id='bubble-3' class='ezabble'>
   ...
 </div>
-<div id='bubble-4', class='ezabble'>
+<div id='bubble-4' class='ezabble'>
   ...
 </div>
 ```
