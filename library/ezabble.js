@@ -1,3 +1,5 @@
+// FRONTEND: Add some error console logs and look into a try catch
+
 window.ezabbleLib = {
   timeout: false,
   number: 0,
@@ -183,7 +185,7 @@ document.body.addEventListener('DOMSubtreeModified', function () {
     ezabbleLib.init();
     ezabbleLib.timeout = true;
     setTimeout(function() {
-      ezabbleLib.timeout = false
+      ezabbleLib.timeout = false;
     }, 250);
   };
 });
