@@ -47,6 +47,9 @@ Great, now you must identify the position you want your tooltip to display in. Y
 The position of the trangle that pokes out of the tooltip is determined by a 12 grid system around a square.
 <img src="/demo/12-grid-system.png" alt="12 Grid System" width="40%">
 
+## Re-Initialize
+By default, once the JS folder initially runs, it will crall all ezabbles and work its magic. However, a new one is created, you can re-initialize ezabble by calling `ezabbleLib.init();`
+
 ## Additional Information
 Now that we have the bare minimum, lets customize our bubbles.
 
@@ -55,9 +58,9 @@ To adjuste the default color, create a `window.ezabble_colors` object.
 ```javascript
 window.ezabble_colors = {
   default: {
-    backgroundColor: '#000',
-    borderColor: '#fff',
-    shadowColor: '#000'
+    backgroundColor: 'Some Color',
+    borderColor: 'Some Color',
+    shadowColor: 'Some Color'
   }
 }
 ```
