@@ -141,10 +141,7 @@ window.ezabbleLib = {
       setTimeout(function() {
         if(randomNumber !== ezabble.__randomNumber) { return };
         ezabbleWrapper.classList.add('show-ezabble');
-        setTimeout(function() {
-          if(randomNumber !== ezabble.__randomNumber) { return };
-          ezabbleWrapper.classList.add('pointer-ezabble');
-        }, 250);
+        ezabbleWrapper.classList.add('pointer-ezabble');
       }, delay1);
       
     } else {
