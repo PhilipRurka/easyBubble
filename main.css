@@ -1,10 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
 section {
   margin: 4rem;
 }
 
 body {
   background-color: white;
-  margin-top: 100px;
+  margin-top: 40px;
+  min-width: 450px;
 }
 
 .grid-section {
@@ -236,7 +241,6 @@ li button::before {
   left: calc(100% - 110px);
 }
 
-
 /** Position Font Color */
 #bubble-2 span {
   color: #2D1E2F;
@@ -248,4 +252,37 @@ li button::before {
 
 #bubble-4 span {
   color: #3d3286;
+}
+
+#bubble-5 span {
+  color: #fff;
+}
+
+#bubble-6 span {
+  color: #fff;
+}
+
+.header {
+  margin: 0 auto 50px;
+  width: 450px;
+  display: table;
+}
+
+h1 { margin: 0 }
+
+h2,
+h3 {
+  display: inline-block;
+}
+
+h3 {
+  margin-left: 10px;
+  font-weight: 100;
+}
+
+hr {
+  margin: 80px 0 40px;
+  border: none;
+  height: 3px;
+  background-color: black;
 }
