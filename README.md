@@ -45,7 +45,7 @@ Great, now you must identify the position you want your tooltip to display in. Y
   ...
 ```
 The position of the trangle that pokes out of the tooltip is determined by a 12 grid system around a square.
-<img src="/12-grid-system.png" alt="12 Grid System" width="40%">
+<img src="/demo/12-grid-system.png" alt="12 Grid System" width="40%">
 
 ## Additional Information
 Now that we have the bare minimum, lets customize our bubbles.
