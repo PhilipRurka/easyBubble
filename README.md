@@ -4,8 +4,9 @@ Its a Simple Nano Library that helps you create beautiful tooltips with minimal 
 ## Demo
 https://philiprurka.github.io/ezabble/
 
-## CDN
-Coming Soon!
+## Links
+**CSS:** https://github.com/PhilipRurka/ezabble/blob/dev/library/ezabble.css
+**JS:**  https://github.com/PhilipRurka/ezabble/blob/master/library/ezabble.js
 
 ## How To Use
 ### HTML
