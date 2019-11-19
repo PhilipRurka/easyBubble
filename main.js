@@ -1,7 +1,9 @@
+// FRONTEND: Turn this into Cammel Case Keys
+
 window.ezabble_colors = {
   default: {
-    background_color: '#000',
-    border_color: '#fff',
+    background_color: '#fff',
+    border_color: '#000',
     shadow_color: '#000'
   },
   per_id: [
@@ -29,6 +31,12 @@ window.ezabble_colors = {
       border_color: '#3CD2E0',
       shadow_color: '#0C1A2B'
     },
+    {
+      id: 'bubble-6',
+      background_color: '#F56416',
+      border_color: '#F56416',
+      shadow_color: '#0C1A2B'
+    }
   ]
 };
 
