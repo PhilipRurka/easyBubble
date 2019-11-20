@@ -6,7 +6,7 @@ https://philiprurka.github.io/ezabble/
 
 ## CDN
 **CSS:** https://res.cloudinary.com/philip/raw/upload/v1574205560/ezabble_ernzlk.css <br />
-**JS:** https://res.cloudinary.com/philip/raw/upload/v1574205564/ezabble_pfwufl.js
+**JS:** https://res.cloudinary.com/philip/raw/upload/v1574269674/ezabble_osuwso.js
 
 ## How To Use
 ### HTML
