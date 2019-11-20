@@ -1,5 +1,7 @@
 .ezabble,
-.ezabble * {
+.ezabble *,
+.ezabble *::before,
+.ezabble *::after {
   box-sizing: border-box;
 }
 
@@ -44,8 +46,8 @@
 .ezabble-wrapper::after {
   content: '';
   position: absolute;
-  height: 12px;
-  width: 12px;
+  height: 14px;
+  width: 14px;
   z-index: 1;
   border-style: solid;
 }
@@ -90,7 +92,7 @@
 .ezabble-pos-1::after,
 .ezabble-pos-2::after,
 .ezabble-pos-3::after {
-  bottom: calc(100% - 9px);
+  bottom: calc(100% - 8px);
   border-top-width: 2px;
   border-left-width: 2px;
 }
@@ -142,7 +144,7 @@
 .ezabble-pos-4::after,
 .ezabble-pos-5::after,
 .ezabble-pos-6::after {
-  left: calc(100% - 9px);
+  left: calc(100% - 8px);
   border-top-width: 2px;
   border-right-width: 2px;
 }
@@ -194,7 +196,7 @@
 .ezabble-pos-7::after,
 .ezabble-pos-8::after,
 .ezabble-pos-9::after {
-  top: calc(100% - 9px);
+  top: calc(100% - 8px);
   border-bottom-width: 2px;
   border-right-width: 2px;
 }
@@ -246,7 +248,7 @@
 .ezabble-pos-10::after,
 .ezabble-pos-11::after,
 .ezabble-pos-12::after {
-  right: calc(100% - 9px);
+  right: calc(100% - 8px);
   border-bottom-width: 2px;
   border-left-width: 2px;
 }
