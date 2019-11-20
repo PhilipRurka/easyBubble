@@ -4,27 +4,45 @@ window.ezabbleLib = {
   timeout: false,
   number: 0,
   defaultColors: {
-    backgroundColor: '#000',
-    borderColor: '#fff',
+    backgroundColor: '#fff',
+    borderColor: '#000',
     shadowColor: '#000'
   },
   init: function() {
-    window.ezabble_colors = window.ezabble_colors || defaultColors;
+    var colorKeys = ['backgroundColor', 'borderColor', 'shadowColor'];
     var ezabbleList = document.getElementsByClassName('ezabble');
     for (var i = 0; i < ezabbleList.length; i++) {
       var ezabble = ezabbleList[i];
       var set = undefined;
-      if(ezabble_colors.per_id) {
+      if(window.ezabble_colors && ezabble_colors.per_id) {
         for (var ii = 0; ii < ezabble_colors.per_id.length; ii++) {
           var colorObj = ezabble_colors.per_id[ii];
           if(colorObj.id === ezabble.id) {
+
+            for (let i = 0; i < colorKeys.length; i++) {
+              const key = colorKeys[i];
+              
+              if(!colorObj[key]) {
+                if(window.ezabble_colors && window.ezabble_colors.default && window.ezabble_colors.default[key]) {
+                  colorObj[key] = window.ezabble_colors.default[key];
+                } else {
+                  colorObj[key] = ezabbleLib.defaultColors[key];
+                };
+              };
+            };
+
             set = colorObj;
             break;
           };
         };
       };
 
-      set = set || ezabble_colors.default;
+      if(!set && window.ezabble_colors && window.ezabble_colors.default) {
+        set = ezabble_colors.default;
+      } else if(set === undefined) {
+        set = ezabbleLib.defaultColors;
+      };
+
       if(!ezabble.classList.contains('tracked')) {
 
         for (var iii = 0; iii < ezabble.children.length; iii++) {
