@@ -51,13 +51,13 @@ Great, now you must identify the position you want your tooltip to display in. Y
 * ezabble-pos-10
 * ezabble-pos-11
 * ezabble-pos-12
-<br />
-You can try each positions in the [demo](https://philiprurka.github.io/ezabble/).
+
 ```html
 ...
 <div class='ezabble-wrapper ezabble-pos-1'>
   ...
 ```
+You can try each positions in the [demo](https://philiprurka.github.io/ezabble/).
 The position of the trangle that pokes out of the tooltip is determined by a 12 grid system around a square.
 <img src="/demo/12-grid-system.png" alt="12 Grid System" width="40%">
 
