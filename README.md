@@ -13,7 +13,7 @@ https://philiprurka.github.io/ezabble/
 ```html
 <div class='ezabble'>
   <div class='ezabble-event'>
-    <!-- Item(s) you want to be part of the event trigger. -->
+    <!-- Item(s) you want to be part of the trigger event -->
   </div>
   <div class='ezabble-wrapper'>
     <!-- Content you want displayed in the ezabble -->
@@ -38,7 +38,21 @@ or
 ```
 ---
 ### Position
-Great, now you must identify the position you want your tooltip to display in. You can chose position 1 - 12. You can try each positions in the [demo](https://philiprurka.github.io/ezabble/).
+Great, now you must identify the position you want your tooltip to display in. You can chose position 1 - 12.
+* ezabble-pos-1
+* ezabble-pos-2
+* ezabble-pos-3
+* ezabble-pos-4
+* ezabble-pos-5
+* ezabble-pos-6
+* ezabble-pos-7
+* ezabble-pos-8
+* ezabble-pos-9
+* ezabble-pos-10
+* ezabble-pos-11
+* ezabble-pos-12
+<br />
+You can try each positions in the [demo](https://philiprurka.github.io/ezabble/).
 ```html
 ...
 <div class='ezabble-wrapper ezabble-pos-1'>
