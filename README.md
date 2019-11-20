@@ -63,7 +63,7 @@ The position of the trangle that pokes out of the tooltip is determined by a 12 
 <img src="/demo/12-grid-system.png" alt="12 Grid System" width="40%">
 
 ## Re-Initialize
-By default, once the JS folder initially runs, it will crall all ezabbles and work its magic. However, a new one is created, you can re-initialize ezabble by calling `ezabbleLib.init();`
+By default, once the JS folder initially runs, it will crall all ezabbles and work its magic. However, then a new one is created, you can re-initialize ezabble by calling `ezabbleLib.init();`
 
 ## Additional Information
 Now that we have the bare minimum, lets customize our bubbles.
@@ -79,15 +79,15 @@ window.ezabble_colors = {
   }
 }
 ```
-If you want to target specific ezabbles, add the `per_id` key and for match the id of the ezabble with each object's id within the array. Example:
+If you want to target specific ezabbles, add the `per_id` key and match the id of the ezabble with each object's id within the per_id array. Example:
 ```html
-<div id='bubble-2' class='ezabble'>
+<div id='Some Id' class='ezabble'>
   ...
 </div>
-<div id='bubble-3' class='ezabble'>
+<div id='Some Id' class='ezabble'>
   ...
 </div>
-<div id='bubble-4' class='ezabble'>
+<div id='Some Id' class='ezabble'>
   ...
 </div>
 ```
