@@ -123,15 +123,15 @@ Custome your ezabble by applying the following classes to `.ezabble-wrapper`.
 
 | Options     | Classe                 | Description                          |
 |-------------|------------------------|--------------------------------------|
-| Box Shadow  | .ezabble-shadow        | Gives the Tooltip a nice box shadow. |
+| Box Shadow  | ezabble-shadow        | Gives the Tooltip a nice box shadow. |
 |**-------------**|**------------------------**|**--------------------------------------**|
 | Fixed Width |                        | Sets a static width to the tooltip.  |
-|             | .ezabble-width-sm      | Static width of 128px.               |
-|             | .ezabble-width-md      | Static width of 192px.               |
-|             | .ezabble-width-lg      | Static width of 256px.               |
+|             | ezabble-width-sm      | Static width of 128px.               |
+|             | ezabble-width-md      | Static width of 192px.               |
+|             | ezabble-width-lg      | Static width of 256px.               |
 |**-------------**|**------------------------**|**--------------------------------------**|
 | Max-Height  |                        | Sets a max height to the tooltip.    |
-|             | .ezabble-max-height-sm | Max height of 128px.                 |
-|             | .ezabble-max-height-md | Max height of 192px.                 |
-|             | .ezabble-max-height-lg | Max height of 256px.                 |
+|             | ezabble-max-height-sm | Max height of 128px.                 |
+|             | ezabble-max-height-md | Max height of 192px.                 |
+|             | ezabble-max-height-lg | Max height of 256px.                 |
 |**-------------**|**------------------------**|**--------------------------------------**|
