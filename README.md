@@ -59,6 +59,7 @@ Great, now you must identify the position you want your tooltip to display in. Y
 ```
 You can try each positions in the [demo](https://philiprurka.github.io/ezabble/).
 The position of the trangle that pokes out of the tooltip is determined by a 12 grid system around a square.
+<br/>
 <img src="/demo/12-grid-system.png" alt="12 Grid System" width="40%">
 
 ## Re-Initialize
