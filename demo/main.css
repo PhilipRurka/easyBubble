@@ -264,7 +264,10 @@ li button::before {
   display: table;
 }
 
-h1 { margin: 0 }
+h1 {
+  margin: 0;
+  white-space: nowrap;
+}
 
 h2,
 h3 {
