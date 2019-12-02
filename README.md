@@ -1,5 +1,5 @@
 # Ezabble
-Its a Simple Nano Library that helps you create beautiful tooltips with minimal code.
+Ezabble is a simple Nano Library with no dependencies that helps you create beautiful tooltips with minimal code.
 
 ## Demo
 https://philiprurka.github.io/ezabble/
